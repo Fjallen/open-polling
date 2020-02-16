@@ -29,7 +29,7 @@ module.exports = {
 						 }
 						 else{
 							res.json({
-								status:"success", message: "user found!!!", data:{
+								status:"success", message: "User Found", data:{
 								role:"User", token:token
 							}});	
 						 }

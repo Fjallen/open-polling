@@ -8,7 +8,7 @@ var jwt = require("jsonwebtoken");
 const UserSchema = require('./models/user')
 
 //Mongoose and db connection
-mongoose.connect("mongodb://localhost:27017/user",{
+mongoose.connect("mongodb://localhost:27017/user-test",{
     useNewUrlParser:true,
     useUnifiedTopology:true,
 })
@@ -51,4 +51,9 @@ app.get('/getall',(req,res)=>{
 })
 
 var port = 3001;
+
 app.listen(port,()=>console.log(`Server running on:${port}`))
+
+module.exports = {
+    app
+};
