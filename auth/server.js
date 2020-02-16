@@ -44,7 +44,7 @@ authenticateUser=(req,res,next)=>{
     });
 }
 //get all users
-app.get('/getall',(req,res)=>{
+app.get('/users',(req,res)=>{
     UserSchema.find({},(err,result)=>{
         res.send(result)
     })

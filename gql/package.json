@@ -1,0 +1,22 @@
+{
+  "name": "graphql-service",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "apollo-datasource-rest": "^0.7.0",
+    "apollo-server": "^2.10.1",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "express-graphql": "^0.9.0",
+    "graphql": "^14.6.0",
+    "graphql-import": "^1.0.0-beta.2",
+    "graphql-tag": "^2.10.3"
+  }
+}
