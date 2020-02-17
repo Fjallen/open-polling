@@ -4,7 +4,7 @@
   "description": "Server for lab5",
   "main": "server.js",
   "scripts": {
-    "test": "mocha ./tests --reporters --exit",
+    "test": "NODE_ENV=Test mocha ./tests --reporters --exit",
     "start": "node server.js",
     "stop": "killall --signal SIGINT myApp"
   },
