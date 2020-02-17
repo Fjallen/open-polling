@@ -57,12 +57,14 @@ app.get("/poll/user/:id",(req,res)=>{
 //Add a new Poll
 app.post("/poll/add",(req,res)=>{
     //Build Poll Parameters
+    //Id is generated as a random 6 digit number for now, without 0s
+    let pollId = Math.floor(Math.random()*900000+10000)
     let poll = new pollSchema({
-        pollId: "TEST",
+        pollId: pollId,
         title: req.body.title,
         userId: "Me",
         selections: req.body.selections,
-        createDate: "NOW"
+        createDate: Date.now(),
     })
     poll.save((err,cb)=>{
         if (err){
@@ -79,9 +81,9 @@ app.post("/poll/add",(req,res)=>{
 app.post("/poll/:id",(req,res)=>{
     //Building a response From Request
     var response = {
-        ip: "localhost",// Get IP from request
+        ip: req.ip,// Get IP from request
         selection: req.body.selection, //What the user selected
-        responseTime:"NOW"//Get Datetime from request
+        responseTime: Date.now(),
     }
     //Push the response into the poll object
     pollSchema.updateOne({_id: req.params.id},{$push:{
