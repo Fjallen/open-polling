@@ -1,0 +1,32 @@
+version: "3.7"
+services:
+    auth:
+        build:
+            context: ./auth
+            dockerfile: Dockerfile
+        restart: always
+        ports:
+            - "9000:9000"
+        volumes:
+            - ./api:/api
+        depends_on:
+            - mongodb
+
+    mongodb:
+        image: mongo
+        restart: always
+        container_name: mongodb
+        volumes:
+            - ./data-node:/data/db
+        ports:
+            - 27017:27017
+        command: mongod --noauth
+
+    graphql:
+        build:
+            context: ./gql
+            dockerfile: Dockerfile
+        ports:
+            - "4000:4000"
+        depends_on: 
+            - auth

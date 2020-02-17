@@ -1,7 +1,8 @@
 const { ApolloServer, gql } = require('apollo-server');
 const fetch = require('node-fetch');
 
-const authUrl = "http://localhost:3001"; //url for auth services
+const authUrl = "http://auth:9000"; //url for auth services
+
 
 const typeDefs = gql`
     type User {

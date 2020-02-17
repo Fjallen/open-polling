@@ -50,7 +50,7 @@ app.get('/users',(req,res)=>{
     })
 })
 
-var port = 3001;
+var port = 9000;
 
 app.listen(port,()=>console.log(`Server running on:${port}`))
 

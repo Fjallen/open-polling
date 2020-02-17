@@ -4,7 +4,9 @@
   "description": "Server for lab5",
   "main": "server.js",
   "scripts": {
-    "test": "mocha ./tests"
+    "test": "mocha ./tests --reporters --exit",
+    "start": "node server.js",
+    "stop": "killall --signal SIGINT myApp"
   },
   "author": "",
   "license": "ISC",
@@ -21,6 +23,7 @@
     "mongoose": "^5.7.12"
   },
   "devDependencies": {
+    "mocha": "^7.0.1",
     "chai": "^4.2.0",
     "supertest": "^4.0.2"
   }

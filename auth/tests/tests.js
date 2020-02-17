@@ -1,8 +1,6 @@
-var request = require('supertest');
 var assert = require("assert");
-var expect = require('chai').expect;
-var should = require('chai').should();
 var app = require("../server").app;
+var request = require('supertest');
 
 describe("Testing Authentication Service",()=>{
     //Register Test
