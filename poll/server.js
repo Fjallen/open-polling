@@ -6,7 +6,7 @@ const cors = require('cors');
 var jwt = require("jsonwebtoken");
 const pollSchema = require("./models/polls");
 //Mongoose and db connection, Connecting to Local Mongodb
-mongoose.connect("mongodb://localhost:27017/polls",{
+mongoose.connect("mongodb://mongodb:27017/polls",{
     useNewUrlParser:true,
     useUnifiedTopology:true,
 })
