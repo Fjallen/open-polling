@@ -4,7 +4,7 @@ import { gql } from 'apollo-boost';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card'
 import Alert from 'react-bootstrap/Alert'
-import Selection from "./selection";
+import Selection from "./Selection";
 
 //Function for Querying A Poll and getting required data
 function QUERY_POLL(pollId){

@@ -39,3 +39,14 @@ services:
             - "4000:4000"
         depends_on: 
             - auth
+    client:
+        build:
+            context: ./client
+            dockerfile: Dockerfile
+        volumes:
+            - './client:/usr/src/app'
+        ports:
+            - 3000:3000
+        depends_on: 
+            - graphql
+            - poll

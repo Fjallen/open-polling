@@ -1,6 +1,6 @@
 import React from 'react';
 import {useParams} from 'react-router-dom'
-import Poll from '../components/poll'
+import Poll from '../components/Poll'
 
 import "./pollPage.css"
 //Reporting Statistics is Currently a WIP

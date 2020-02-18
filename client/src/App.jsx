@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import {Route, Switch} from 'react-router-dom';
 //Custom Pages
-import PollPage from './views/pollPage';
+import PollPage from './views/PollPage';
 import PollsPage from './views/PollsPage.jsx';
 
 
