@@ -53,6 +53,7 @@ const Poll=(props)=>{
         postData(`http://localhost:3002/poll/${props.id}`, {'selection':selectId})
         .then((data) => {
           console.log(data);
+          localStorage.setItem(props.id, true);
         });
       }
       else{
@@ -80,7 +81,7 @@ const Poll=(props)=>{
     if (error) return <p>ERROR</p>;
     return (
       <div>
-        <Card style={{width:'30rem'}}>
+        <Card style={{width:'40rem'}}>
           <Card.Header as="h4">{data.poll.title}</Card.Header>
           <Card.Body>
           <Card.Subtitle>Choose one answer:</Card.Subtitle>
