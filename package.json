@@ -1,0 +1,22 @@
+{
+  "name": "open-polling",
+  "version": "1.0.0",
+  "description": "Opensourced Web Application for Creating Polls",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Fjallen/open-polling.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Fjallen/open-polling/issues"
+  },
+  "homepage": "https://github.com/Fjallen/open-polling#readme",
+  "devDependencies": {
+    "cypress": "^4.0.2"
+  }
+}
