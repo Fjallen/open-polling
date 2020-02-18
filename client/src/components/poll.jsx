@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
 import { useQuery } from '@apollo/react-hooks';
 import { gql } from 'apollo-boost';
-import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card'
 import Alert from 'react-bootstrap/Alert'
 import Selection from "./selection";
+
 //Function for Querying A Poll and getting required data
 function QUERY_POLL(pollId){
   return gql`
@@ -20,10 +20,6 @@ function QUERY_POLL(pollId){
   }`
 }
 
-
-
-
-
 //First letter has to be capital
 const Poll=(props)=>{
     //Testing out Hooks, I don't think its ready 
@@ -33,12 +29,31 @@ const Poll=(props)=>{
     function changeHandler(id){
       setId(id);
     };
+    //Generic Post Request
+    async function postData(url = '', data = {}) {
+      // Default options are marked with *
+      const response = await fetch(url, {
+        method: 'POST',
+        mode: 'cors',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data) // body data type must match "Content-Type" header
+      });
+      return await response.json(); // parses JSON response into native JavaScript objects
+    }
+    
     //Handle submit
-    function submitResponse(event){
+    async function submitResponse(event){
       //Submit result to server
       //Check if something is selected
       if (selectId !== 0){
-
+        //Send POST request rather than GQL mutation due to IP being overriden
+        //Can migrate to Axios later, this is just to show I know fetch
+        postData(`http://localhost:3002/poll/${props.id}`, {'selection':selectId})
+        .then((data) => {
+          console.log(data);
+        });
       }
       else{
         //Show a message saying poll not selected

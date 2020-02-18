@@ -1,0 +1,16 @@
+.background {
+    background-color: #EFF0EB;
+    padding-top: 50px;
+    padding-bottom: 100px;
+    height: 100%;
+    margin: 0 auto;
+    display:flex;
+    justify-content: center;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#poll-container {
+    width: auto;
+}

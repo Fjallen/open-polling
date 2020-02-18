@@ -86,7 +86,7 @@ app.post("/poll/:id",(req,res)=>{
         responseTime: Date.now(),
     }
     //Push the response into the poll object
-    pollSchema.updateOne({_id: req.params.id},{$push:{
+    pollSchema.updateOne({pollId: req.params.id},{$push:{
         responses:response
     }},(err,raw)=>{
         //Response Handling
@@ -94,7 +94,7 @@ app.post("/poll/:id",(req,res)=>{
             res.send({message:"Failed to Add Response"})
         }
         else{
-            console.log(raw)
+            //Raw logs can be sent to Elastic Services
             res.status(200).send({message:"Success"})
         }
     })

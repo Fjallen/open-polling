@@ -1,9 +1,10 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
-import Poll from "./components/poll";
-import {Route, Switch} from 'react-router-dom'
+import {Route, Switch} from 'react-router-dom';
+//Custom Pages
 import PollPage from './views/pollPage';
+import PollsPage from './views/PollsPage.jsx';
+
 
 class App extends React.Component{
 
